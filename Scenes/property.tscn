@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://swdlj0e4x17a"]
+
+[ext_resource type="Texture2D" uid="uid://cdgoesb57w6dq" path="res://Assets/Sprites/prop_brown.png" id="1_qd3nn"]
+[ext_resource type="Script" path="res://Scripts/property.gd" id="2_meuhi"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="2_ybsth"]
+[ext_resource type="LabelSettings" uid="uid://bk2flyuom6qk6" path="res://LabelSettings/new_label_settings.tres" id="4_tisfk"]
+
+[node name="Property" type="Sprite2D"]
+position = Vector2(705, 478)
+texture = ExtResource("1_qd3nn")
+script = ExtResource("2_meuhi")
+
+[node name="prop_name" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.255
+anchor_right = 1.0
+anchor_bottom = 0.56
+offset_left = -65.0
+offset_top = -100.0
+offset_right = -65.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ybsth")
+theme_override_font_sizes/font_size = 10
+text = "#nombre propiedad"
+label_settings = ExtResource("4_tisfk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="prop_price" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.755
+anchor_right = 1.0
+anchor_bottom = 0.875
+offset_left = -60.0
+offset_top = -100.0
+offset_right = -69.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ybsth")
+theme_override_font_sizes/font_size = 10
+text = "#price"
+label_settings = ExtResource("4_tisfk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2

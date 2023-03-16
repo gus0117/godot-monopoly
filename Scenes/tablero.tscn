@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://kenyjah5ldh1"]
+
+[ext_resource type="Script" path="res://Scripts/Tablero.gd" id="1_gqn72"]
+[ext_resource type="Texture2D" uid="uid://ccfdkblcu2io3" path="res://Assets/Sprites/go.png" id="2_rq8xo"]
+[ext_resource type="Texture2D" uid="uid://cdgoesb57w6dq" path="res://Assets/Sprites/prop_brown.png" id="3_b2bbf"]
+
+[node name="Tablero" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1570.0
+offset_bottom = 1570.0
+script = ExtResource("1_gqn72")
+
+[node name="c_go" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1470, 1470)
+texture = ExtResource("2_rq8xo")
+
+[node name="c_brown_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1305, 1470)
+texture = ExtResource("3_b2bbf")
