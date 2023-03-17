@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0mdhojfj458l"]
+
+[ext_resource type="Texture2D" uid="uid://ccfdkblcu2io3" path="res://Assets/Sprites/go.png" id="1_nhikg"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="3_70kt8"]
+
+[node name="corner_go" type="Sprite2D"]
+position = Vector2(705, 478)
+texture = ExtResource("1_nhikg")
+
+[node name="prop_name" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.005
+anchor_top = 0.185
+anchor_right = 1.0
+anchor_bottom = 0.68
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -101.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_70kt8")
+theme_override_font_sizes/font_size = 20
+text = "Avanza
+Gana $200"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 3

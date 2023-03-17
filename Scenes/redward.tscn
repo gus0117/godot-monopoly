@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmq51i8mkwbsb"]
+
+[ext_resource type="Texture2D" uid="uid://ddshxii48gwmh" path="res://Assets/Sprites/community_chest.png" id="1_pcdw3"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="3_bhq6j"]
+
+[node name="Redward" type="Sprite2D"]
+position = Vector2(705, 478)
+texture = ExtResource("1_pcdw3")
+
+[node name="prop_name" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.055
+anchor_right = 1.0
+anchor_bottom = 0.36
+offset_left = -65.0
+offset_top = -100.0
+offset_right = -65.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bhq6j")
+theme_override_font_sizes/font_size = 15
+text = "Caja comunal"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2

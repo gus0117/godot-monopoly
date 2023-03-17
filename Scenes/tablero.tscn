@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://kenyjah5ldh1"]
+[gd_scene load_steps=20 format=3 uid="uid://kenyjah5ldh1"]
 
 [ext_resource type="Script" path="res://Scripts/Tablero.gd" id="1_gqn72"]
-[ext_resource type="Texture2D" uid="uid://ccfdkblcu2io3" path="res://Assets/Sprites/go.png" id="2_rq8xo"]
-[ext_resource type="Texture2D" uid="uid://cdgoesb57w6dq" path="res://Assets/Sprites/prop_brown.png" id="3_b2bbf"]
+[ext_resource type="PackedScene" uid="uid://swdlj0e4x17a" path="res://Scenes/property.tscn" id="2_hn6en"]
+[ext_resource type="PackedScene" uid="uid://domcerd2yau1m" path="res://Scenes/companies.tscn" id="3_6w3xm"]
+[ext_resource type="PackedScene" uid="uid://dmq51i8mkwbsb" path="res://Scenes/redward.tscn" id="4_8ahag"]
+[ext_resource type="PackedScene" uid="uid://mtqqhe14hd3y" path="res://Scenes/chance.tscn" id="5_a7ash"]
+[ext_resource type="PackedScene" uid="uid://b0mdhojfj458l" path="res://Scenes/corner_go.tscn" id="6_e54p6"]
+[ext_resource type="PackedScene" uid="uid://do8opd8rg7va0" path="res://Scenes/corner_jail.tscn" id="7_4lb2l"]
+[ext_resource type="PackedScene" uid="uid://bce3ehls0xcmk" path="res://Scenes/corner_free_parking.tscn" id="8_621qg"]
+[ext_resource type="PackedScene" uid="uid://bcsowic7ti3u" path="res://Scenes/corner_police.tscn" id="9_p1yjh"]
+[ext_resource type="PackedScene" uid="uid://dh0l0db47vu6v" path="res://Scenes/income_tax.tscn" id="10_iiro8"]
+[ext_resource type="PackedScene" uid="uid://dpfuvyyuk7ict" path="res://Scenes/luxury_tax.tscn" id="11_h4n74"]
+[ext_resource type="Texture2D" uid="uid://cj08lbcpf0t68" path="res://Assets/Sprites/prop_blue-light.png" id="12_fb7my"]
+[ext_resource type="Texture2D" uid="uid://bfftm5f0naog3" path="res://Assets/Sprites/prop_purple.png" id="13_pk2ws"]
+[ext_resource type="Texture2D" uid="uid://c4ts02kjd5h42" path="res://Assets/Sprites/electric_company.png" id="14_0l2b2"]
+[ext_resource type="Texture2D" uid="uid://cnnnf766hsfb7" path="res://Assets/Sprites/prop_orange.png" id="15_6q5yt"]
+[ext_resource type="Texture2D" uid="uid://cd4kcuvgd3xsy" path="res://Assets/Sprites/prop_red.png" id="16_c5hdh"]
+[ext_resource type="Texture2D" uid="uid://drsf5blmaues4" path="res://Assets/Sprites/prop_yellow.png" id="17_e0c8l"]
+[ext_resource type="Texture2D" uid="uid://bg5kk1lpqcboe" path="res://Assets/Sprites/prop_green.png" id="18_08w1e"]
+[ext_resource type="Texture2D" uid="uid://7ondq8rqvayt" path="res://Assets/Sprites/prop_blue.png" id="19_y2iga"]
 
 [node name="Tablero" type="Control"]
 layout_mode = 3
@@ -11,12 +27,174 @@ offset_right = 1570.0
 offset_bottom = 1570.0
 script = ExtResource("1_gqn72")
 
-[node name="c_go" type="Sprite2D" parent="."]
-visible = false
+[node name="corner_go" parent="." instance=ExtResource("6_e54p6")]
 position = Vector2(1470, 1470)
-texture = ExtResource("2_rq8xo")
 
-[node name="c_brown_1" type="Sprite2D" parent="."]
-visible = false
+[node name="c_brown_1" parent="." instance=ExtResource("2_hn6en")]
 position = Vector2(1305, 1470)
-texture = ExtResource("3_b2bbf")
+
+[node name="Redward_1" parent="." instance=ExtResource("4_8ahag")]
+position = Vector2(1175, 1470)
+
+[node name="c_brown_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1045, 1470)
+
+[node name="income_tax" parent="." instance=ExtResource("10_iiro8")]
+position = Vector2(915, 1470)
+
+[node name="companies_train_1" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(785, 1470)
+
+[node name="c_blue_light_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(655, 1470)
+texture = ExtResource("12_fb7my")
+
+[node name="chance_1" parent="." instance=ExtResource("5_a7ash")]
+position = Vector2(525, 1470)
+
+[node name="c_blue_light_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(395, 1470)
+texture = ExtResource("12_fb7my")
+
+[node name="c_blue_light_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(265, 1470)
+texture = ExtResource("12_fb7my")
+
+[node name="corner_jail" parent="." instance=ExtResource("7_4lb2l")]
+position = Vector2(100, 1470)
+rotation = 1.5708
+
+[node name="c_purple_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 1305)
+rotation = 1.5708
+texture = ExtResource("13_pk2ws")
+
+[node name="companies_electric" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(100, 1175)
+rotation = 1.5708
+texture = ExtResource("14_0l2b2")
+
+[node name="c_purple_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 1045)
+rotation = 1.5708
+texture = ExtResource("13_pk2ws")
+
+[node name="c_purple_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 915)
+rotation = 1.5708
+texture = ExtResource("13_pk2ws")
+
+[node name="companies_train_2" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(100, 785)
+rotation = 1.5708
+
+[node name="c_orange_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 655)
+rotation = 1.5708
+texture = ExtResource("15_6q5yt")
+
+[node name="Redward_2" parent="." instance=ExtResource("4_8ahag")]
+position = Vector2(100, 525)
+rotation = 1.5708
+
+[node name="c_orange_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 395)
+rotation = 1.5708
+texture = ExtResource("15_6q5yt")
+
+[node name="c_orange_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(100, 265)
+rotation = 1.5708
+texture = ExtResource("15_6q5yt")
+
+[node name="corner_free_parking" parent="." instance=ExtResource("8_621qg")]
+position = Vector2(100, 100)
+rotation = 1.5708
+
+[node name="c_red_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(265, 100)
+rotation = 3.14159
+texture = ExtResource("16_c5hdh")
+
+[node name="chance_2" parent="." instance=ExtResource("5_a7ash")]
+position = Vector2(395, 100)
+rotation = 3.14159
+
+[node name="c_red_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(525, 100)
+rotation = 3.14159
+texture = ExtResource("16_c5hdh")
+
+[node name="c_red_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(655, 100)
+rotation = 3.14159
+texture = ExtResource("16_c5hdh")
+
+[node name="companies_train_3" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(785, 100)
+rotation = 3.14159
+
+[node name="c_yellow_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(915, 100)
+rotation = -3.14159
+texture = ExtResource("17_e0c8l")
+
+[node name="c_yellow_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1045, 100)
+rotation = -3.14159
+texture = ExtResource("17_e0c8l")
+
+[node name="companies_electric2" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(1175, 100)
+rotation = 3.14159
+texture = ExtResource("14_0l2b2")
+
+[node name="c_yellow_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1305, 100)
+rotation = -3.14159
+texture = ExtResource("17_e0c8l")
+
+[node name="corner_police" parent="." instance=ExtResource("9_p1yjh")]
+position = Vector2(1470, 100)
+rotation = 4.71239
+
+[node name="c_green_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1470, 265)
+rotation = 4.71239
+texture = ExtResource("18_08w1e")
+
+[node name="c_green_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1470, 395)
+rotation = 4.71239
+texture = ExtResource("18_08w1e")
+
+[node name="Redward_3" parent="." instance=ExtResource("4_8ahag")]
+position = Vector2(1470, 525)
+rotation = 4.71239
+
+[node name="c_green_3" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1470, 655)
+rotation = -1.5708
+texture = ExtResource("18_08w1e")
+
+[node name="companies_train_4" parent="." instance=ExtResource("3_6w3xm")]
+position = Vector2(1470, 785)
+rotation = 4.71239
+
+[node name="chance_3" parent="." instance=ExtResource("5_a7ash")]
+position = Vector2(1470, 915)
+rotation = 4.71239
+
+[node name="c_blue_1" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1470, 1045)
+rotation = 4.71239
+texture = ExtResource("19_y2iga")
+
+[node name="luxury_tax" parent="." instance=ExtResource("11_h4n74")]
+position = Vector2(1470, 1175)
+rotation = 4.71239
+
+[node name="c_blue_2" parent="." instance=ExtResource("2_hn6en")]
+position = Vector2(1470, 1305)
+rotation = -1.5708
+texture = ExtResource("19_y2iga")

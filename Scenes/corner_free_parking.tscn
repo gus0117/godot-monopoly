@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bce3ehls0xcmk"]
+
+[ext_resource type="Texture2D" uid="uid://41iufjj0vkjp" path="res://Assets/Sprites/free_parking.png" id="1_v6ul1"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="2_d6noa"]
+
+[node name="corner_free_parking" type="Sprite2D"]
+position = Vector2(705, 478)
+texture = ExtResource("1_v6ul1")
+
+[node name="prop_name" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.005
+anchor_right = 0.995
+anchor_bottom = 0.205
+offset_left = -99.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d6noa")
+theme_override_font_sizes/font_size = 12
+text = "Estacionamiento"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
+
+[node name="prop_name2" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.83
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_left = -100.0
+offset_top = -107.0
+offset_right = -102.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_d6noa")
+theme_override_font_sizes/font_size = 20
+text = "Libre
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2

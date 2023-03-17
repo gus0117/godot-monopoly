@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://do8opd8rg7va0"]
+
+[ext_resource type="Texture2D" uid="uid://dwthp3hn78ttx" path="res://Assets/Sprites/jail.png" id="1_p852k"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="3_b8og6"]
+
+[node name="corner_jail" type="Sprite2D"]
+position = Vector2(705, 478)
+texture = ExtResource("1_p852k")
+
+[node name="prop_name" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.715
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b8og6")
+theme_override_font_sizes/font_size = 20
+text = "Carcel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+max_lines_visible = 2
