@@ -118,6 +118,87 @@ var board = {
 				x = 525,
 				y = 100
 			}
+		},
+		{
+			id = 24,
+			prop_name = "Avenida Ilinois",
+			price = 240,
+			pos = {
+				x = 655,
+				y = 100
+			}
+		},
+		{
+			id = 26,
+			prop_name = "Avenida Atlantic",
+			price = 260,
+			pos = {
+				x = 915,
+				y = 100
+			}
+		},
+		{
+			id = 27,
+			prop_name = "Avenida Ventnor",
+			price = 260,
+			pos = {
+				x = 1045,
+				y = 100
+			}
+		},
+		{
+			id = 29,
+			prop_name = "Jardines Marvens",
+			price = 280,
+			pos = {
+				x = 1305,
+				y = 100
+			}
+		},
+		{
+			id = 31,
+			prop_name = "Avenida Pacific",
+			price = 300,
+			pos = {
+				x = 1470,
+				y = 265
+			}
+		},
+		{
+			id = 32,
+			prop_name = "Avenida Carolina Norte",
+			price = 300,
+			pos = {
+				x = 1470,
+				y = 395
+			}
+		},
+		{
+			id = 34,
+			prop_name = "Avenida Pensilvania",
+			price = 320,
+			pos = {
+				x = 1470,
+				y = 655
+			}
+		},
+		{
+			id = 37,
+			prop_name = "Parque Place",
+			price = 350,
+			pos = {
+				x = 1470,
+				y = 1045
+			}
+		},
+		{
+			id = 39,
+			prop_name = "Paseo Maritimo",
+			price = 400,
+			pos = {
+				x = 1470,
+				y = 1305
+			}
 		}
 	]
 }
