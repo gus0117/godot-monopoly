@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://kenyjah5ldh1"]
+[gd_scene load_steps=25 format=3 uid="uid://kenyjah5ldh1"]
 
 [ext_resource type="Script" path="res://Scripts/Tablero.gd" id="1_gqn72"]
 [ext_resource type="PackedScene" uid="uid://swdlj0e4x17a" path="res://Scenes/property.tscn" id="2_hn6en"]
@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://drsf5blmaues4" path="res://Assets/Sprites/prop_yellow.png" id="17_e0c8l"]
 [ext_resource type="Texture2D" uid="uid://bg5kk1lpqcboe" path="res://Assets/Sprites/prop_green.png" id="18_08w1e"]
 [ext_resource type="Texture2D" uid="uid://7ondq8rqvayt" path="res://Assets/Sprites/prop_blue.png" id="19_y2iga"]
+[ext_resource type="PackedScene" uid="uid://bywtjqfldj61q" path="res://Scenes/player.tscn" id="20_1bmiw"]
+[ext_resource type="Texture2D" uid="uid://wkqc6phx45tu" path="res://Assets/Sprites/Players/player_green.png" id="21_7clns"]
+[ext_resource type="Texture2D" uid="uid://d25olplp2prdh" path="res://Assets/Sprites/Players/player_blue.png" id="21_r5i5m"]
+[ext_resource type="Texture2D" uid="uid://bkgeoa8uqaqhn" path="res://Assets/Sprites/Players/player_purple.png" id="22_3lq0m"]
+[ext_resource type="Texture2D" uid="uid://bg6ynvn5x25ts" path="res://Assets/Sprites/Players/player_red.png" id="23_qghvd"]
 
 [node name="Tablero" type="Control"]
 layout_mode = 3
@@ -198,3 +203,31 @@ rotation = 4.71239
 position = Vector2(1470, 1305)
 rotation = -1.5708
 texture = ExtResource("19_y2iga")
+
+[node name="Player_1" parent="." instance=ExtResource("20_1bmiw")]
+position = Vector2(1435, 1435)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_1"]
+texture = ExtResource("21_r5i5m")
+
+[node name="Player_2" parent="." instance=ExtResource("20_1bmiw")]
+position = Vector2(1505, 1505)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_2"]
+texture = ExtResource("21_7clns")
+
+[node name="Player_3" parent="." instance=ExtResource("20_1bmiw")]
+position = Vector2(1505, 1435)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_3"]
+texture = ExtResource("22_3lq0m")
+
+[node name="Player_4" parent="." instance=ExtResource("20_1bmiw")]
+position = Vector2(1435, 1505)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player_4"]
+texture = ExtResource("23_qghvd")

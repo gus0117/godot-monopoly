@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bywtjqfldj61q"]
+
+[ext_resource type="Texture2D" uid="uid://bg6ynvn5x25ts" path="res://Assets/Sprites/Players/player_red.png" id="1_es7ul"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_pluyc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18eaa"]
+radius = 40.1995
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(400, 400)
+script = ExtResource("1_pluyc")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_18eaa")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_es7ul")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

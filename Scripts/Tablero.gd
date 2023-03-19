@@ -205,10 +205,40 @@ var board = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$c_brown_1.setProperty(board.properties[0].id, board.properties[0].prop_name, board.properties[0].price)
-	$c_brown_2.setProperty(board.properties[1].id, board.properties[1].prop_name, board.properties[1].price)
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	#$c_brown_1.setProperty(board.properties[0].id, board.properties[0].prop_name, board.properties[0].price)
+	#$c_brown_2.setProperty(board.properties[1].id, board.properties[1].prop_name, board.properties[1].price)
+	init_players()
+	start_player_move(1, 11)
+
+func init_players():
+	$Player_1.offset = Vector2(-35, -35)
+	$Player_2.offset = Vector2(35, 35)
+	$Player_3.offset = Vector2(-35, 35)
+	$Player_4.offset = Vector2(35, -35)
+
+
+## Genera un array de posiciones segun la posicion actual
+## y la tirada de dados para iniciar el movimiento del jugador
+func start_player_move(idPlayer, dices):
+	var player = get_player_by_id(idPlayer)
+	var skip = player.currentBox + dices # se obtiene la casilla destino
+	var targets = Array()
+	# Se carga un vector con las posiciones de las casillas por las que debe 
+	# pasar el jugador actual
+	for i in range(player.currentBox, skip):
+		var next = i + 1
+		if next > 39:
+			next = next - 39
+		var box = get_child(next)
+		targets.append(box.position)
+	# Se pasa el vector al player para que inicie el recorrido
+	player.set_targets(targets)
+
+
+## Obtiene un player segun su id
+func get_player_by_id(id):
+	if id < 0 || id > 3:
+		pass
+	var players = [$Player_1, $Player_2, $Player_3, $Player_4]
+	return players[id]
 
