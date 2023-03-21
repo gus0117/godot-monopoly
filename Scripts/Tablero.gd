@@ -203,18 +203,35 @@ var board = {
 	]
 }
 
+var player_turn = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#$c_brown_1.setProperty(board.properties[0].id, board.properties[0].prop_name, board.properties[0].price)
 	#$c_brown_2.setProperty(board.properties[1].id, board.properties[1].prop_name, board.properties[1].price)
+	$DiceCanvas.hide()
 	init_players()
-	start_player_move(1, 11)
+	player_turn = 0
+	$DiceCanvas.set_player_name($Player_1.player_name)
+	$DiceCanvas.show()
+	#start_player_move(0, 11)
 
 func init_players():
 	$Player_1.offset = Vector2(-35, -35)
+	$Player_1.player_name = "Player 1"
+	$Player_1.id = 0
+	
 	$Player_2.offset = Vector2(35, 35)
+	$Player_2.player_name = "Player 2"
+	$Player_2.id = 1
+	
 	$Player_3.offset = Vector2(-35, 35)
+	$Player_3.player_name = "Player 3"
+	$Player_3.id = 2
+	
 	$Player_4.offset = Vector2(35, -35)
+	$Player_4.player_name = "Player 4"
+	$Player_4.id = 3
 
 
 ## Genera un array de posiciones segun la posicion actual
@@ -242,3 +259,16 @@ func get_player_by_id(id):
 	var players = [$Player_1, $Player_2, $Player_3, $Player_4]
 	return players[id]
 
+func set_next_turn():
+	player_turn += 1
+	if player_turn > 3:
+		player_turn = 0
+	$DiceCanvas.set_player_name(get_player_by_id(player_turn).player_name)
+	$DiceCanvas.show()
+
+func _on_dice_canvas_dice_ready(d1, d2):
+	var dice_result = d1 + d2
+	get_player_by_id(player_turn).set_new_box(dice_result)
+	start_player_move(player_turn, dice_result)
+	#$DiceCanvas.hide()
+	#set_next_turn()

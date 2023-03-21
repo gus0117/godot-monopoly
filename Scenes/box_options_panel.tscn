@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmr0nvws58wau"]
+
+[ext_resource type="Texture2D" uid="uid://cpx1qif76cggq" path="res://Assets/Backgrounds/background.png" id="1_8nl2b"]
+[ext_resource type="Texture2D" uid="uid://cd4kcuvgd3xsy" path="res://Assets/Sprites/prop_red.png" id="1_tvbw1"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="2_5xylv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu5yi"]
+font = ExtResource("2_5xylv")
+font_color = Color(0, 0, 0, 1)
+
+[node name="Box_options_panel" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.995
+offset_right = 1.0
+offset_bottom = -6.10352e-05
+texture = ExtResource("1_8nl2b")
+
+[node name="prop_data" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.407
+anchor_top = 0.101
+anchor_right = 0.57
+anchor_bottom = 0.351
+offset_left = 0.399994
+offset_top = 0.199997
+offset_right = -3.05176e-05
+offset_bottom = 0.199982
+texture = ExtResource("1_tvbw1")
+
+[node name="prop_name" type="Label" parent="prop_data"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.27
+anchor_right = 1.0
+anchor_bottom = 0.495
+offset_left = 2.0
+offset_right = -2.0
+theme_override_fonts/font = ExtResource("2_5xylv")
+text = "Nombre de propiedad"
+label_settings = SubResource("LabelSettings_uu5yi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="prop_price" type="Label" parent="prop_data"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.64
+anchor_right = 1.0
+anchor_bottom = 0.865
+offset_left = 2.0
+offset_top = -1.52588e-05
+offset_right = -2.0
+offset_bottom = -1.52588e-05
+theme_override_fonts/font = ExtResource("2_5xylv")
+text = "$999"
+label_settings = SubResource("LabelSettings_uu5yi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_buy" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.199
+anchor_top = 0.512
+anchor_right = 0.44
+anchor_bottom = 0.595
+offset_left = -0.200012
+offset_top = 5.39999
+offset_right = -3.05176e-05
+offset_bottom = -3.05176e-05
+theme_override_fonts/font = ExtResource("2_5xylv")
+theme_override_font_sizes/font_size = 18
+text = "Comprar"
+
+[node name="btn_auction" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.551
+anchor_top = 0.516
+anchor_right = 0.797
+anchor_bottom = 0.599
+offset_left = 0.200012
+offset_top = 3.19998
+offset_right = 0.399963
+offset_bottom = -0.200043
+theme_override_fonts/font = ExtResource("2_5xylv")
+theme_override_font_sizes/font_size = 18
+text = "Subastar"
+
+[node name="btn_done" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.364
+anchor_top = 0.645
+anchor_right = 0.611
+anchor_bottom = 0.727
+offset_left = -0.200012
+offset_top = 0.999939
+offset_right = 0.200012
+offset_bottom = 0.399963
+theme_override_fonts/font = ExtResource("2_5xylv")
+theme_override_font_sizes/font_size = 18
+text = "Aceptar"
+
+[node name="btn_end_turn" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.31
+anchor_top = 0.775
+anchor_right = 0.671
+anchor_bottom = 0.884
+offset_top = 1.0
+offset_right = 0.200012
+offset_bottom = -0.200073
+theme_override_fonts/font = ExtResource("2_5xylv")
+theme_override_font_sizes/font_size = 18
+text = "Terminar Turno"

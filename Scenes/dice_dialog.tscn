@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0ke6uuleh2hq"]
+
+[ext_resource type="PackedScene" uid="uid://b7ledtc0o5myp" path="res://Scenes/dice.tscn" id="1_honnd"]
+
+[node name="dice_dialog" type="ReferenceRect"]
+offset_right = 730.0
+offset_bottom = 292.0
+border_width = 2.5
+
+[node name="dice" parent="." instance=ExtResource("1_honnd")]
+position = Vector2(454, 600)

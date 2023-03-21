@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
 signal isArrived
+var id
+var player_name
 
 @export var currentBox: int
 @export var targetBox: int
 @export var offset: Vector2
 @export var arrived: bool
-@export var targets: Array
+var targets: Array
+
 var index
 const SPEED = 400.0
 var target = Vector2(0, 0)
@@ -37,6 +40,12 @@ func _physics_process(delta):
 		$Timer.start()
 		arrived = false
 
+## Calcula la posicion actual a partir de la tirada de dados
+func set_new_box(dice_result):
+	var newPos = currentBox + dice_result
+	if newPos > 39:
+		newPos = newPos - 39
+	currentBox = newPos
 
 func _on_timer_timeout():
 	index += 1

@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://dc7wh4iup8f1n"]
+
+[ext_resource type="Texture2D" uid="uid://73m45ohknfwp" path="res://Assets/Dice/six sided die.png" id="1_iwd21"]
+[ext_resource type="Script" path="res://Scripts/dice_canvas.gd" id="1_w5tu5"]
+[ext_resource type="FontFile" uid="uid://cfn4j4hj7c5yf" path="res://Assets/Fonts/dogica.ttf" id="2_c2k7o"]
+[ext_resource type="Texture2D" uid="uid://cpx1qif76cggq" path="res://Assets/Backgrounds/background.png" id="2_tkemo"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8kvf2"]
+diffuse_texture = ExtResource("2_tkemo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o71ke"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wf8d"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efjfv"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a1lh"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jino"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5traj"]
+atlas = ExtResource("1_iwd21")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t4cj4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o71ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wf8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efjfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a1lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jino")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5traj")
+}],
+"loop": true,
+"name": &"dice_sides",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0de3c"]
+font_size = 22
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="DiceCanvas" type="CanvasLayer"]
+script = ExtResource("1_w5tu5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_right = 1.001
+anchor_bottom = 0.442
+offset_left = 0.4
+offset_right = 3.19995
+offset_bottom = 0.399963
+texture = SubResource("CanvasTexture_8kvf2")
+
+[node name="dice" type="AnimatedSprite2D" parent="."]
+position = Vector2(700, 800)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_t4cj4")
+animation = &"dice_sides"
+frame = 3
+frame_progress = 0.850963
+
+[node name="dice2" type="AnimatedSprite2D" parent="."]
+position = Vector2(900, 800)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_t4cj4")
+animation = &"dice_sides"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_top = 0.043
+anchor_right = 1.0
+anchor_bottom = 0.18
+offset_left = 103.0
+offset_top = -2.4
+offset_right = -87.0001
+offset_bottom = -1.52588e-05
+theme_override_fonts/font = ExtResource("2_c2k7o")
+text = "Turno del Jugador #########"
+label_settings = SubResource("LabelSettings_0de3c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.245
+anchor_right = 0.646
+anchor_bottom = 0.309
+offset_left = -0.200012
+offset_top = -1.0
+offset_right = 0.199951
+offset_bottom = -0.200012
+theme_override_fonts/font = ExtResource("2_c2k7o")
+theme_override_font_sizes/font_size = 20
+text = "Lanzar"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

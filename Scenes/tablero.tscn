@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://kenyjah5ldh1"]
+[gd_scene load_steps=26 format=3 uid="uid://kenyjah5ldh1"]
 
 [ext_resource type="Script" path="res://Scripts/Tablero.gd" id="1_gqn72"]
 [ext_resource type="PackedScene" uid="uid://swdlj0e4x17a" path="res://Scenes/property.tscn" id="2_hn6en"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://d25olplp2prdh" path="res://Assets/Sprites/Players/player_blue.png" id="21_r5i5m"]
 [ext_resource type="Texture2D" uid="uid://bkgeoa8uqaqhn" path="res://Assets/Sprites/Players/player_purple.png" id="22_3lq0m"]
 [ext_resource type="Texture2D" uid="uid://bg6ynvn5x25ts" path="res://Assets/Sprites/Players/player_red.png" id="23_qghvd"]
+[ext_resource type="PackedScene" uid="uid://dc7wh4iup8f1n" path="res://Scenes/dice_canvas.tscn" id="25_ea23x"]
 
 [node name="Tablero" type="Control"]
 layout_mode = 3
@@ -231,3 +232,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player_4"]
 texture = ExtResource("23_qghvd")
+
+[node name="DiceCanvas" parent="." instance=ExtResource("25_ea23x")]
+
+[connection signal="dice_ready" from="DiceCanvas" to="." method="_on_dice_canvas_dice_ready"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://b7ledtc0o5myp"]
+
+[ext_resource type="Texture2D" uid="uid://73m45ohknfwp" path="res://Assets/Dice/six sided die.png" id="1_aqvkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb3hl"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs46t"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2kyp"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e7re"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kt8u"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkfh4"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkqh3"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(0, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jehq1"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(16, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wia4y"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(32, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmlky"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(48, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhfl2"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(64, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpgut"]
+atlas = ExtResource("1_aqvkh")
+region = Rect2(80, 224, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdxdf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb3hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs46t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2kyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e7re")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kt8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkfh4")
+}],
+"loop": true,
+"name": &"dice_sides",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkqh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jehq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wia4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmlky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhfl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpgut")
+}],
+"loop": true,
+"name": &"dice_throwed",
+"speed": 15.0
+}]
+
+[node name="dice" type="AnimatedSprite2D"]
+position = Vector2(177, 113)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bdxdf")
+animation = &"dice_sides"
+frame_progress = 0.293871
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_left = -110.0
+offset_top = -56.0
+offset_right = 207.0
+offset_bottom = 79.0
