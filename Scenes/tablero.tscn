@@ -235,4 +235,8 @@ texture = ExtResource("23_qghvd")
 
 [node name="DiceCanvas" parent="." instance=ExtResource("25_ea23x")]
 
+[connection signal="isArrived" from="Player_1" to="." method="_on_player_1_is_arrived"]
+[connection signal="isArrived" from="Player_2" to="." method="_on_player_2_is_arrived"]
+[connection signal="isArrived" from="Player_3" to="." method="_on_player_3_is_arrived"]
+[connection signal="isArrived" from="Player_4" to="." method="_on_player_4_is_arrived"]
 [connection signal="dice_ready" from="DiceCanvas" to="." method="_on_dice_canvas_dice_ready"]

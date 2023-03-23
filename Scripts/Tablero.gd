@@ -203,7 +203,6 @@ var board = {
 	]
 }
 
-var player_turn = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -211,8 +210,7 @@ func _ready():
 	#$c_brown_2.setProperty(board.properties[1].id, board.properties[1].prop_name, board.properties[1].price)
 	$DiceCanvas.hide()
 	init_players()
-	player_turn = 0
-	$DiceCanvas.set_player_name($Player_1.player_name)
+	$DiceCanvas.set_next_turn()
 	$DiceCanvas.show()
 	#start_player_move(0, 11)
 
@@ -260,15 +258,29 @@ func get_player_by_id(id):
 	return players[id]
 
 func set_next_turn():
-	player_turn += 1
-	if player_turn > 3:
-		player_turn = 0
-	$DiceCanvas.set_player_name(get_player_by_id(player_turn).player_name)
-	$DiceCanvas.show()
+	GameStats.set_next_turn()
+	$DiceCanvas.set_next_turn()
 
 func _on_dice_canvas_dice_ready(d1, d2):
 	var dice_result = d1 + d2
-	get_player_by_id(player_turn).set_new_box(dice_result)
-	start_player_move(player_turn, dice_result)
-	#$DiceCanvas.hide()
-	#set_next_turn()
+	start_player_move(GameStats.player_turn, dice_result)
+	get_player_by_id(GameStats.player_turn).set_new_box(dice_result) #Se agrega la casilla target
+
+func _on_player_1_is_arrived():
+	print("Player 1 fin recorrido")
+	set_next_turn()
+
+
+func _on_player_2_is_arrived():
+	print("Player 2 fin recorrido")
+	set_next_turn()
+
+
+func _on_player_3_is_arrived():
+	print("Player 3 fin recorrido")
+	set_next_turn()
+
+
+func _on_player_4_is_arrived():
+	print("Player 4 fin recorrido")
+	set_next_turn()

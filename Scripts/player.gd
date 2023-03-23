@@ -48,6 +48,7 @@ func set_new_box(dice_result):
 	currentBox = newPos
 
 func _on_timer_timeout():
+	$Timer.stop()
 	index += 1
 	if index < targets.size():
 		set_target(targets[index])

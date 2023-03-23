@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfh8uxby5ff0q"]
+
+[ext_resource type="Script" path="res://Scripts/GameStats.gd" id="1_685vw"]
+
+[node name="GameStats" type="Node"]
+script = ExtResource("1_685vw")
+data_url = "res://Data/monopoly_db.json"
